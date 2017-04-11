@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react'
 import { StyleSheet, View, Button } from 'react-native'
 import { connect } from 'dva'

@@ -1,3 +1,5 @@
+// @flow
+
 import { createAction, NavigationActions } from '../utils'
 import * as authService from '../services/auth'
 
@@ -8,7 +10,7 @@ export default {
     login: false,
   },
   reducers: {
-    loginStart(state, { payload }) {
+    loginStart(state, { payload }): string {
       return { ...state, ...payload }
     },
     loginEnd(state, { payload }) {
