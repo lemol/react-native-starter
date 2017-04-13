@@ -3,6 +3,15 @@
 import { createAction, NavigationActions } from '../utils'
 import * as authService from '../services/auth'
 
+type State = {
+  fetching: boolean,
+  login: boolean
+}
+
+type LoginAction = {
+  
+}
+
 export default {
   namespace: 'app',
   state: {
@@ -10,15 +19,15 @@ export default {
     login: false,
   },
   reducers: {
-    loginStart(state, { payload }): string {
+    loginStart(state: State, { payload }: any): State {
       return { ...state, ...payload }
     },
-    loginEnd(state, { payload }) {
-      return { ...state, ...payload }
+    loginEnd(state: State, { payload }: any): State {
+      return { ...payload }
     },
   },
   effects: {
-    * login({ payload }, { call, put }) {
+    * login({ payload }: any, { call, put }: any): any {
       yield put(
         createAction('loginStart')({
           fetching: true,
